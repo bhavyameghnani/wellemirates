@@ -15,7 +15,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import toast from 'react-hot-toast';
-import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -71,7 +70,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   });
 
 
-export default function MeditationTiles() {
+export default function WallTile() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -89,7 +88,7 @@ export default function MeditationTiles() {
   };
 
   const notifyWelcome = () => {
-    toast.success("WellEmirate welcomes you !");
+    toast.success("NEAXT welcomes you !");
   };
 
   return (
@@ -97,7 +96,7 @@ export default function MeditationTiles() {
       <CssBaseline />
           <main>
               <Typography variant="h5" className={classes.divHeading}>
-                <b>During meditation, you focus your attention and eliminate the stream of jumbled thoughts that may be crowding your mind and causing stress!</b>
+                <b>Like, Share, Support User's Activity and Promote Well-being!</b>
               </Typography>
               <br />
               <Grid container spacing={4}>
@@ -128,9 +127,9 @@ export default function MeditationTiles() {
                             // speak({ text: card.readmore,rate : 0.8})
                          }}
                           >
-                          View More
+                          View more
                       </Button>
-                       <Link href={card.link}>
+                     
                       <Button
                             variant="outlined"
                             size="small"
@@ -138,9 +137,8 @@ export default function MeditationTiles() {
                             align="center"
                             fullWidth
                           >
-                          Start
+                          Like
                       </Button>
-                      </Link> 
 
                       <Button
                             variant="outlined"
@@ -149,7 +147,7 @@ export default function MeditationTiles() {
                             align="center"
                             fullWidth
                           >
-                          Share
+                          Share now
                       </Button>
                       </CardActions>
                       </CardContent>
@@ -161,10 +159,10 @@ export default function MeditationTiles() {
            
               <br />
               <Typography variant="h5" className={classes.divHeading}>
-                <b>Digitally Enabling Meditation</b>
+                <b>Digitally Enabling & Promoting Well-being</b>
               </Typography>
               <Typography variant="body1" className={classes.desc}>
-              Marketplace for Mental Wellness
+              Digital Wall for Citizens
             </Typography>
 
               <Dialog
@@ -202,62 +200,56 @@ export default function MeditationTiles() {
 
   const featuredPosts = [
     {
-      title: 'Yoga and Spirituality - AI Yoga Pose Detector (Virtual Fitness Coach)',
-      link: "https://yogamodule.s3.amazonaws.com/YOGA+module/learn.html",
+      title: 'Anshu Singh - Yoga & Fitness',
       description:
-      'Points - 1500',
-      image: 'https://betterme.world/articles/wp-content/uploads/2020/12/shutterstock_665429929-740x451.jpg',
+      'Status: Completed 30mins of AI Yoga Fitness Coach classes',
+      image: 'https://betterme.world/articles/wp-content/uploads/2020/06/Yoga-Before-or-After-Workout-740x490.jpg',
       imageText: 'Artists name',
-      readmore: "Under your desk, raise both legs at once upwards, and slowly lower them down. Repeat few times."
+      
     },
     {
-      title: 'Breathing Exercise',
-      link: "/#/breathing",
+      title: 'Aditi Anshu - Building Bird house ',
       description:
-      'Points - 600',
-      image: 'https://media.istockphoto.com/vectors/woman-meditating-in-nature-and-leaves-concept-illustration-for-yoga-vector-id1139912908?k=20&m=1139912908&s=612x612&w=0&h=ljrtdv9NxmtUBrQ_lDzQGDmSQSnTlOMg6J75WWpDS3s=',
+      'Status: Built Bird House for her Home & Neighbours house',
+      image: 'https://media.gettyimages.com/videos/woman-building-a-diy-insect-hotel-video-id1151505708?s=640x640',
       imageText: 'Artists name',
-      readmore: "While sitting down, stretch your arms out at your sides and press your shoulder blades together. With your palms facing down, circle your arms forwards around 20 times. Then, face your palms upwards and circle your arms backwards around 20 times. After this, circle your wrists 20 times in each direction."
+      
     },
     {
-      title: 'Mindfulness Meditation',
-      link: "/#/mindfulmedi",
+      title: 'Darshan Patil - Beach Clean-up',
       description:
-      'Points - 900',
-      image: 'https://media.istockphoto.com/vectors/mindfulness-meditation-and-yoga-background-in-pastel-vintage-colors-vector-id1152829238?k=20&m=1152829238&s=170667a&w=0&h=u1pVjWhiQ8BTan7yfN-EERQmDLfsCZ4PWs7f67a9XM0=',
+      'Status: Helped in cleaning Versova Beach by segregating plastic & other waste.',
+      image: 'https://images.yourstory.com/cs/2/2d86ed30b28211e8b2e7114aea10c711/Imagenppx-1585058353573.jpg',
       imageText: 'Artists name',
-      readmore: "Stand up and hold your hands together behind your back, expanding your chest. Pull your shoulder blades as close together as possible and hold the pose for 30 seconds."
-    },
-    
-  
-    {
-      title: 'Focused Meditation (Coming soon)',
-      link: "/#/breathing",
-      description:
-      'Points - 1000',
-      image: 'https://101yogasan.com/wp-content/uploads/2020/04/Focused-Meditation.jpg',
-      imageText: 'Artists name',
-      readmore: "Holding a water bottle, or an object of a similar weight, let your arms fall straight by your side and then slowly bend them upwards. Repeat this action multiple times on both arms."
+      
     },
   
     {
-      title: 'Visualisation Meditation (Coming soon)',
-      link: "/#/breathing",
+      title: 'Bhavya Meghnani - Waste Management Activity',
       description:
-      'Points - 2000',
-      image: 'https://vedicpaths.com/wp-content/uploads/2020/04/healinghypnosis.jpg',
+      'Status: Perfomed waste management activity with her niece to segragate wet & dry waste',
+      image: 'https://www.plasticsmakeitpossible.com/wp-content/uploads/2016/03/iStock_000085536075_Small-400x266.jpg',
       imageText: 'Artists name',
-      readmore: "Sitting at your desk, cover your left knee with your right hand and look over your left shoulder. Hold this pose for 30 seconds to stretch your back, remembering to breathe. Repeat the action on the opposite side."
+      
     },
+  
     {
-      title: 'Progressive Relaxation (Coming soon)',
-      link: "/#/breathing",
+      title: 'Schezeen Fazulbhoy - Tree Plantation',
       description:
-      'Points - 800',
-      image: 'https://cf.ltkcdn.net/stress/images/std/178976-425x290r1-lying-down.jpg',
+      'Status: Actively participated in tree plantation drive and planted 10 trees around various areas',
+      image: 'https://previews.123rf.com/images/jackf/jackf1305/jackf130500947/19803177-happy-mature-woman-planting-tree-at-garden.jpg',
       imageText: 'Artists name',
-      readmore: "Using a non-moving chair perch on the edge of the seat and slowly stand up with your arms by your sides. Lower yourself until you gently touch the chair and then stand back up, remembering to breathe. Repeat. For extra points, hover just over the chair for 30 seconds."
+      
     },
+
+    {
+        title: 'Rajesh Verma - On choosing cyclying over Car',
+        description:
+        'Status: Rajesh cycled 2KM to reach at his office instead of taking car.',
+        image: 'https://s3.envato.com/files/273351525/DSC_4253.jpg',
+        imageText: 'Artists name',
+        
+      },
   
   
   ];

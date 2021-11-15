@@ -67,45 +67,7 @@ export default function CommunityConnect() {
       <main>
 
       <MainFeaturedPost post={mainFeaturedPost} />
-        {/* Hero unit */}
-        {/* <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h6"
-              variant="h3"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              TGIF - Community Connect
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              Be the change you want to see
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Become a Leader
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Join a group
-                  </Button>
-                </Grid>
-              </Grid>
-            </div>
-          </Container>
-        </div> */}
-
-
-        <Container className={classes.cardGrid} maxWidth="md">
+       
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
@@ -126,13 +88,13 @@ export default function CommunityConnect() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button size="large" color="primary">
                       Read More
                     </Button>
-                    <Button size="small" style={{ color: "#F96740" }}>
-                      Share
+                    <Button size="large" style={{ color: "#F96740" }}>
+                      Share Now
                     </Button>
-                    <Button size="small" style={{ color: "#03AB30" }}>
+                    <Button size="large" style={{ color: "#03AB30" }}>
                       Apply Now
                     </Button>
                   </CardActions>
@@ -140,7 +102,7 @@ export default function CommunityConnect() {
               </Grid>
             ))}
           </Grid>
-        </Container>
+       
       </main>
       </Container>
     </React.Fragment>

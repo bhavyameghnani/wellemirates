@@ -17,6 +17,8 @@ import BreathingExercise from './Components/Meditation/BreathingExercise';
 import MindfulMeditation from './Components/Meditation/MindfulMeditation';
 import WorkLanding from './Components/Work/WorkLanding';
 import MindNote from './Components/Work/MindNote';
+import Rewards from './Components/Rewards/Rewards';
+import Wall from './Components/Wall/Wall';
 
 function App() {
   return (
@@ -28,9 +30,7 @@ function App() {
             <Route exact path="/signup" component={SignUpPage}/>
             <Route exact path="/home" component={Home}/>
             <Route exact path="/deskexercise" component={DeskExercise}/>
-            <Route exact path="/upskillzo" component={UpskillPage}/>
             <Route exact path="/askmeanything" component={AskMeAnything}/>
-            <Route exact path="/blog" component={Blog}/>
             <Route exact path="/course" component={Course}/>
             <Route exact path="/health" component={Health}/>
             <Route exact path="/meditation" component={Meditation}/>
@@ -39,8 +39,9 @@ function App() {
             <Route exact path="/affirmations" component={Affirmations}/>
             <Route exact path="/breathing" component={BreathingExercise}/>
             <Route exact path="/mindfulmedi" component={MindfulMeditation}/>
-            <Route exact path="/work" component={WorkLanding}/>
-            <Route exact path="/note" component={MindNote}/>
+            <Route exact path="/wall" component={Wall}/>
+            <Route exact path="/rewards" component={Rewards}/>
+         
           </Switch>
       </HashRouter>
     </div>

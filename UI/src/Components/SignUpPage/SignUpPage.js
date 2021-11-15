@@ -16,7 +16,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       <Link color="inherit" href="https://material-ui.com/">
-        DASH by BAscheD
+        WellEmirate by Shukaran
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}

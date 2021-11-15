@@ -154,7 +154,7 @@ export default function LoginPage() {
           </Grid>
           <Box mt={5}>
             <Typography variant="body1" color="textSecondary" align="center">
-              Welcome to EY DASH (Digital Ally for Smart Human) by Team BAscheD
+              Welcome to WellEmirate
               </Typography>
           </Box>
         </div>
