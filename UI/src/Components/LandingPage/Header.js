@@ -13,7 +13,7 @@ const sections = [
   { title: 'Home', url: '#/home' },
   { title: 'Health & Mental Wellness', url: '#/health' },
   { title: 'Community Connect', url: '#/communityconnect' },
-  { title: 'Sustaining Mother Earth', url: '#/communityconnect' },
+  
   { title: 'Wall', url: '#/wall' },
   { title: 'Rewards', url: '#/rewards' },
   { title: 'My Profile', url: '#/profile' },
