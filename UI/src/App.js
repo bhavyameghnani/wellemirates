@@ -5,8 +5,6 @@ import LoginPage from './Components/LoginPage/LoginPage';
 import Home from './Components/LandingPage/LandingPage';
 import DeskExercise from './Components/DeskExercise/DeskExercise';
 import AskMeAnything from './Components/AMA/AskMeAnything';
-import UpskillPage from './Components/UpskillPage/Upskill';
-import Blog from './Components/Blog/Blog';
 import Course from './Components/Course/Course'
 import Health from './Components/HealthLanding/Health'
 import CommunityConnect from './Components/CommunityConnect/CommunityConnect';
@@ -15,10 +13,9 @@ import ProfileMain from './Components/Profile/ProfileMain';
 import Affirmations from './Components/Affirmations/Affirmations';
 import BreathingExercise from './Components/Meditation/BreathingExercise';
 import MindfulMeditation from './Components/Meditation/MindfulMeditation';
-import WorkLanding from './Components/Work/WorkLanding';
-import MindNote from './Components/Work/MindNote';
 import Rewards from './Components/Rewards/Rewards';
 import Wall from './Components/Wall/Wall';
+import Shop from './Components/Shop/Shop';
 
 function App() {
   return (
@@ -39,6 +36,7 @@ function App() {
             <Route exact path="/affirmations" component={Affirmations}/>
             <Route exact path="/breathing" component={BreathingExercise}/>
             <Route exact path="/mindfulmedi" component={MindfulMeditation}/>
+            <Route exact path="/shop" component={Shop}/>
             <Route exact path="/wall" component={Wall}/>
             <Route exact path="/rewards" component={Rewards}/>
          
