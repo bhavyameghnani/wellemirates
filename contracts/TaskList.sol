@@ -6,7 +6,11 @@ contract TaskList {
   struct Task {
     uint id;
     string content;
+    string statement;
     bool completed;
+    string imageLocation;
+    uint price;
+    address owner;
   }
 
   mapping(uint => Task) public tasks;
@@ -14,7 +18,12 @@ contract TaskList {
   event TaskCreated(
     uint id,
     string content,
-    bool completed
+    string statement,
+    bool completed,
+    string imageLocation,
+    uint price,
+    address owner
+    
   );
 
   event TaskCompleted(
@@ -23,13 +32,14 @@ contract TaskList {
   );
 
   constructor() public {
-    createTask("Congratulations on completing the very first task that is Installing our application.");
+    createTask("Congratulations on completing the very first task that is Installing our application.", "First Task", "https://t3.ftcdn.net/jpg/02/80/01/64/360_F_280016442_I5DcWCRT7JTr5Ut86a9VvqNoOfDt854G.jpg", 10);
   }
 
-  function createTask(string memory _content) public {
+  function createTask(string memory _content, string memory _statement, string memory _imageLocation, uint _price) public {
+      address _owner = msg.sender;
     taskCount ++;
-    tasks[taskCount] = Task(taskCount, _content, false);
-    emit TaskCreated(taskCount, _content, false);
+    tasks[taskCount] = Task(taskCount, _content, _statement, false, _imageLocation, _price, _owner);
+    emit TaskCreated(taskCount, _content, _statement, false, _imageLocation, _price, _owner);
   }
 
   function toggleCompleted(uint _id) public {

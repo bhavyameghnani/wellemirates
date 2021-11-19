@@ -281,6 +281,7 @@ export default function ShopTiles(props) {
                           props.shop,
                           localStorage.getItem("price")
                         );
+                        setOpen(false);
                       }}
                     >
                       Buy Now using WellEmirate Coins

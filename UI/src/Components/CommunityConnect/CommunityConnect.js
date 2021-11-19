@@ -1,5 +1,11 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -7,12 +13,13 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-import Header from '../LandingPage/Header';
-import community from '../../Resources/Images/community-ey.gif'
-import MainFeaturedPost from '../LandingPage/MainFeaturedPost';
+import Header from "../LandingPage/Header";
+import community from "../../Resources/Images/community-ey.gif";
+import MainFeaturedPost from "../LandingPage/MainFeaturedPost";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -46,28 +53,46 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 const mainFeaturedPost = {
-    title: 'TGIF - Community Connect',
-    description:
-      "Be the change you want to see - Giving back to the community exclusively on Weekends.",
-      image: "https://c1.wallpaperflare.com/preview/120/295/591/teamwork-team-fist-bump-collaborate.jpg",
-    imgText: 'main image description',
-    linkText: 'Continue reading…'
+  title: "Community Connect",
+  description:
+    "Be the change you want to see - Responsibily giving back to the community",
+  image:
+    "https://c1.wallpaperflare.com/preview/120/295/591/teamwork-team-fist-bump-collaborate.jpg",
+  imgText: "main image description",
+  linkText: "Continue reading…",
+};
+
+export default function CommunityConnect(props) {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const [desc, setDesc] = React.useState("");
+
+  const handleClickOpen = () => {
+    setOpen(true);
   };
 
-export default function CommunityConnect() {
-  const classes = useStyles();
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  function handleCreateTask(event) {
+    setDesc(event.target.value);
+  }
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-          <Header title="TGIF - Community Connect" />
+        <Header title="Community Connect" />
 
-      <main>
+        <main>
+          <MainFeaturedPost post={mainFeaturedPost} />
 
-      <MainFeaturedPost post={mainFeaturedPost} />
-       
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
@@ -94,7 +119,18 @@ export default function CommunityConnect() {
                     <Button size="large" style={{ color: "#F96740" }}>
                       Share Now
                     </Button>
-                    <Button size="large" style={{ color: "#03AB30" }}>
+                    <Button
+                      size="large"
+                      style={{ color: "#03AB30" }}
+                      onClick={() => {
+                        localStorage.setItem("f_title", card.title);
+                        localStorage.setItem("f_description", card.description);
+                        localStorage.setItem("f_image", card.image);
+                        localStorage.setItem("points", card.points);
+
+                        handleClickOpen();
+                      }}
+                    >
                       Apply Now
                     </Button>
                   </CardActions>
@@ -102,8 +138,124 @@ export default function CommunityConnect() {
               </Grid>
             ))}
           </Grid>
-       
-      </main>
+
+          <Dialog
+            open={open}
+            TransitionComponent={Transition}
+            keepMounted
+            maxWidth="lg"
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-slide-title"
+            aria-describedby="alert-dialog-slide-description"
+          >
+            <DialogTitle id="alert-dialog-slide-title">
+              {localStorage.getItem("f_title")}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-slide-description">
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    <center>
+                      <img
+                        alt="fitness tip"
+                        src={localStorage.getItem("f_image")}
+                      />
+                    </center>
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <center>
+                      <Typography variant="h5" className={classes.divHeading}>
+                        <b>Challenge: {localStorage.getItem("f_title")}</b>
+                      </Typography>
+                    </center>
+                  </Grid>
+
+                  <Grid item xs={6}>
+                    <center>
+                      <Typography variant="h5" className={classes.divHeading}>
+                        <b>Points: {localStorage.getItem("points")} WEC 💰</b>
+                      </Typography>
+                    </center>
+                  </Grid>
+
+                  <Grid item xs={6}>
+                    <center>
+                      <Typography variant="h5" className={classes.divHeading}>
+                        <b> Available / Earned WellEmirate Coins: 30 WEC 💰</b>
+                      </Typography>
+                    </center>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <center>
+                      <Button variant="contained" color="primary">
+                        Read more about the challenge
+                      </Button>
+                    </center>
+                  </Grid>
+
+                  <Grid item xs={6}>
+                    <center>
+                      <Button variant="contained" color="primary">
+                        Contact Challenge / Event Sponsors
+                      </Button>
+                    </center>
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <center>
+                      <center>
+                        <TextField
+                          id="standard-basic"
+                          label="Enter Description of the Submission here"
+                          style={{ width: "1000px" }}
+                          onChange={handleCreateTask}
+                        />
+                      </center>
+
+                      <br />
+                      <Grid item xs={12}>
+                        <center>
+                          <input
+                            type="file"
+                            accept="*"
+                            onChange={props.captureFile}
+                            style={{ width: "150px" }}
+                          />
+                        </center>
+                      </Grid>
+
+                      <br />
+
+                      <Grid item xs={12}>
+                        <center>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={() => {
+                              props.createTask(
+                                desc,
+                                localStorage.getItem("f_title"),
+                                localStorage.getItem("points")
+                              );
+                            }}
+                          >
+                            Submit Now
+                          </Button>
+                        </center>
+                      </Grid>
+                    </center>
+                  </Grid>
+                </Grid>
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose} color="primary">
+                Done
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </main>
       </Container>
     </React.Fragment>
   );
@@ -112,32 +264,38 @@ export default function CommunityConnect() {
 const cards = [
   {
     title: "Clean up your local park & streets near your home & office",
-    description: "Points:100",
+    description: "WEC Coins:10 💰",
     image: "https://source.unsplash.com/weekly?park",
+    points: "10",
   },
   {
     title: "Lead & Host a river clean-up challenge in your society",
-    description: "Points:150",
+    description: "WEC Coins:15 💰",
     image: "https://source.unsplash.com/weekly?river",
+    points: "5",
   },
   {
     title: "Build birdhouses for the little birdies in your neighourhood",
-    description: "Points:200",
+    description: "WEC Coins:20 💰",
     image: "https://source.unsplash.com/weekly?bird",
+    points: "20",
   },
   {
     title: "Create your own eco-friendly wrapping paper/gift bags",
-    description: "Points:50",
+    description: "WEC Coins:5 💰",
     image: "https://source.unsplash.com/weekly?bag",
+    points: "5",
   },
   {
     title: "Conduct an enviorment & sustainability session at your work place",
-    description: "Points:150",
+    description: "WEC Coins:15 💰",
     image: "https://source.unsplash.com/weekly?work",
+    points: "5",
   },
   {
     title: "Teach various recycling activities to your younger generation",
-    description: "Points:300",
+    description: "WEC Coins:30 💰",
     image: "https://source.unsplash.com/weekly?kid",
+    points: "30",
   },
 ];
