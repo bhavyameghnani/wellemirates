@@ -58,6 +58,7 @@ class App extends Component {
       open: false,
       receipt: null,
       taskCount: null,
+      allTasks: [],
     };
     this.handleTransferAmount = this.handleTransferAmount.bind(this);
     this.handleDeposit = this.handleDeposit.bind(this);
@@ -128,6 +129,15 @@ class App extends Component {
     const taskCount = await taskList.methods.taskCount().call();
     this.setState({ taskCount: taskCount });
     console.log("taskCount", taskCount);
+
+    //Get All Tasks by calling task function()
+    for (var i = 1; i <= taskCount; i++) {
+      var allTasks = await taskList.methods.tasks(i).call();
+      this.setState({
+        allTasks: [...this.state.allTasks, allTasks],
+      });
+    }
+    console.log("All Tasks", this.state.allTasks);
 
     //Set the state:loading to false once we have loaded our Blockchain
     this.setState({ loading: false });
@@ -200,7 +210,7 @@ class App extends Component {
       this.setState({ loading: true });
 
       this.state.taskList.methods
-        .createTask(content, task, data[0].path, parseInt(price))
+        .createTask(content, task, data[0].hash, parseInt(price))
         .send({ from: this.state.account, gas: 3000000 })
         .once("receipt", (receipt) => {
           this.setState({
@@ -230,6 +240,8 @@ class App extends Component {
             <Route exact path="/affirmations" component={Affirmations} />
             <Route exact path="/breathing" component={BreathingExercise} />
             <Route exact path="/mindfulmedi" component={MindfulMeditation} />
+            <Route exact path="/wall" component={Wall} />
+            <Route exact path="/rewards" component={Rewards} />
             {!this.state.loading && (
               <>
                 <Route
@@ -251,14 +263,12 @@ class App extends Component {
                     <CommunityConnect
                       captureFile={this.captureFile}
                       createTask={this.createTask}
+                      allTasks={this.state.allTasks}
                     />
                   )}
                 />
               </>
             )}
-
-            <Route exact path="/wall" component={Wall} />
-            <Route exact path="/rewards" component={Rewards} />
           </Switch>
         </HashRouter>
 

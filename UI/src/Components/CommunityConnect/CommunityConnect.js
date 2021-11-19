@@ -20,6 +20,13 @@ import Link from "@material-ui/core/Link";
 import Header from "../LandingPage/Header";
 import community from "../../Resources/Images/community-ey.gif";
 import MainFeaturedPost from "../LandingPage/MainFeaturedPost";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -50,6 +57,16 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
+  },
+  divHeading: {
+    color: "#e57373",
+  },
+  subHeading: {
+    color: "#115293",
+    fontWeight: "600",
+  },
+  desc: {
+    color: "#7A8C98",
   },
 }));
 
@@ -83,6 +100,18 @@ export default function CommunityConnect(props) {
   function handleCreateTask(event) {
     setDesc(event.target.value);
   }
+
+  function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+
+  const rows = [
+    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+    createData("Eclair", 262, 16.0, 24, 6.0),
+    createData("Cupcake", 305, 3.7, 67, 4.3),
+    createData("Gingerbread", 356, 16.0, 49, 3.9),
+  ];
 
   return (
     <React.Fragment>
@@ -138,6 +167,67 @@ export default function CommunityConnect(props) {
               </Grid>
             ))}
           </Grid>
+          <br />
+          <Typography variant="h5" className={classes.divHeading}>
+            <b>Your Submissions / Completed Challenges</b>
+          </Typography>
+          <br />
+
+          <TableContainer component={Paper}>
+            <Table
+              sx={{ minWidth: 650 }}
+              size="small"
+              aria-label="a dense table"
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <b>Task ID</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Challenge</b>
+                  </TableCell>
+                  <TableCell align="right">
+                    <b>Submission Title</b>
+                  </TableCell>
+                  <TableCell align="right">
+                    <b>Points Earned</b>
+                  </TableCell>
+                  <TableCell align="right">
+                    <b>Image Location</b>
+                  </TableCell>
+                  <TableCell align="right">
+                    <b>Owner Address</b>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {props.allTasks.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell align="right">{row[0]}</TableCell>
+                    <TableCell align="right">{row[2]}</TableCell>
+                    <TableCell align="right">{row[1]}</TableCell>
+                    <TableCell align="right">{row[5]}</TableCell>
+                    <TableCell align="right">{row[4]}</TableCell>
+                    <TableCell align="right">{row[6]}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+
+          <br />
+          <br />
+          <Typography variant="h5" className={classes.divHeading}>
+            <b>Digitally Enabling Community</b>
+          </Typography>
+          <Typography variant="body1" className={classes.desc}>
+            Connecting & Supporting Indigent Community
+          </Typography>
+          <br />
 
           <Dialog
             open={open}
