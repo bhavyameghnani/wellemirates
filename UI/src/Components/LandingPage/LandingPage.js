@@ -24,6 +24,8 @@ import { CardActionArea } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import Gallery from "./SDGTiles";
+import sdg3 from "../../Resources/Images/sdg3t.png";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -77,6 +79,9 @@ const useStyles = makeStyles((theme) => ({
   },
   divHeading: {
     color: "#593B90",
+  },
+  divHeading2: {
+    color: "#e57373",
   },
   icon: {
     marginRight: theme.spacing(2),
@@ -213,11 +218,22 @@ export default function Home() {
                   </Button>
                 </Grid>
               </Grid>
-
-              <hr />
-              <br />
             </Container>
           </main>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Typography variant="h4" className={classes.divHeading2}>
+                <b>
+                  (SDGs)Sustainable Development Goals that WellEmirate Aims to
+                  Achieve
+                </b>
+              </Typography>
+              <img src={sdg3} height="400px" width="600px" />
+            </Grid>
+            <Grid item xs={12}>
+              <Gallery />
+            </Grid>
+          </Grid>
         </Container>
 
         <br />

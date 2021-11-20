@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
-import SearchIcon from '@material-ui/icons/Search';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
-
+import React from "react";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import SearchIcon from "@material-ui/icons/Search";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 
 const sections = [
-  { title: 'Home', url: '#/home' },
-  { title: 'Health & Mental Wellness', url: '#/health' },
-  { title: 'Community Connect', url: '#/communityconnect' },
-  { title: 'Shop Market place', url: '#/shop' },
-  { title: 'Wall', url: '#/wall' },
-  { title: 'Rewards', url: '#/rewards' },
-  { title: 'My Profile', url: '#/profile' },
+  { title: "Home", url: "#/home" },
+  { title: "Health & Mental Wellness", url: "#/health" },
+  { title: "Community Connect", url: "#/communityconnect" },
+  { title: "Active Learning", url: "#/learning" },
+  { title: "Shop Market place", url: "#/shop" },
+  { title: "Wall", url: "#/wall" },
+  { title: "Rewards", url: "#/rewards" },
+  { title: "My Profile", url: "#/profile" },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -25,12 +25,12 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarTitle: {
     flex: 1,
-    color: '#A200FF',
-    fontWeight : 600
+    color: "#A200FF",
+    fontWeight: 600,
   },
   toolbarSecondary: {
-    justifyContent: 'space-between',
-    overflowX: 'auto',
+    justifyContent: "space-between",
+    overflowX: "auto",
     //fontSize: '15'
   },
   toolbarLink: {
@@ -38,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
     "&:hover": {
       color: "#A200FF",
-    }
+    },
   },
   logo: {
-    width: '10%',
-    height: '10%'
-  }
+    width: "10%",
+    height: "10%",
+  },
 }));
 
 export default function Header(props) {
@@ -53,9 +53,11 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <img className={classes.logo}
+        <img
+          className={classes.logo}
           alt="logo"
-          src="https://he-s3.s3.amazonaws.com/media/cache/3f/d5/3fd5e8c4485e30aa05e1f29b04d74459.png" />
+          src="https://he-s3.s3.amazonaws.com/media/cache/3f/d5/3fd5e8c4485e30aa05e1f29b04d74459.png"
+        />
         <Typography
           component="h2"
           variant="h5"
@@ -73,7 +75,11 @@ export default function Header(props) {
           <AccountCircleIcon />
         </IconButton>
       </Toolbar>
-      <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+      <Toolbar
+        component="nav"
+        variant="dense"
+        className={classes.toolbarSecondary}
+      >
         {sections.map((section) => (
           <Link
             color="inherit"

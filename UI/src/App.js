@@ -28,6 +28,7 @@ import Shop from "./Components/Shop/Shop";
 import Web3 from "web3";
 import { ABI, ADDRESS } from "./walletConfig";
 import { T_ABI, T_ADDRESS } from "./taskListConfig";
+import Podcast from "./Components/Podcast/Podcast";
 
 //Declare IPFS
 const IPFS = require("ipfs-api");
@@ -242,33 +243,34 @@ class App extends Component {
             <Route exact path="/mindfulmedi" component={MindfulMeditation} />
             <Route exact path="/wall" component={Wall} />
             <Route exact path="/rewards" component={Rewards} />
-            {!this.state.loading && (
-              <>
-                <Route
-                  exact
-                  path="/shop"
-                  render={() => (
-                    <Shop
-                      balance={this.state.balanceAmount}
-                      shop={this.state.shop}
-                      handleTransferAmount={this.handleTransferAmount}
-                      handleDeposit={this.handleDeposit}
-                    />
-                  )}
+            <Route exact path="/learning" component={Podcast} />
+            {/* {!this.state.loading && (
+              <> */}
+            <Route
+              exact
+              path="/shop"
+              render={() => (
+                <Shop
+                  balance={this.state.balanceAmount}
+                  shop={this.state.shop}
+                  handleTransferAmount={this.handleTransferAmount}
+                  handleDeposit={this.handleDeposit}
                 />
-                <Route
-                  exact
-                  path="/communityconnect"
-                  render={() => (
-                    <CommunityConnect
-                      captureFile={this.captureFile}
-                      createTask={this.createTask}
-                      allTasks={this.state.allTasks}
-                    />
-                  )}
+              )}
+            />
+            <Route
+              exact
+              path="/communityconnect"
+              render={() => (
+                <CommunityConnect
+                  captureFile={this.captureFile}
+                  createTask={this.createTask}
+                  allTasks={this.state.allTasks}
                 />
-              </>
-            )}
+              )}
+            />
+            {/* </>
+            )} */}
           </Switch>
         </HashRouter>
 
