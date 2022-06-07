@@ -1,25 +1,25 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import ServiceCall from '../../Service/ServiceCall';
+import React from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import Link from "@material-ui/core/Link";
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import ServiceCall from "../../Service/ServiceCall";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       <Link color="inherit" href="https://material-ui.com/">
-        WellEmirate by Shukaran
-      </Link>{' '}
+        DASH by Shukaran
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -30,26 +30,29 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     //backgroundImage: 'url(https://1471793142.rsc.cdn77.org/data/images/full/49011/office-friends.jpeg)',
-    backgroundImage: 'url(https://i.pinimg.com/originals/69/20/fc/6920fc266ea0a8bfbb02561dfdd18f1c.png)',
-    backgroundRepeat: 'no-repeat',
+    backgroundImage:
+      "url(https://i.pinimg.com/originals/69/20/fc/6920fc266ea0a8bfbb02561dfdd18f1c.png)",
+    backgroundRepeat: "no-repeat",
     backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+      theme.palette.type === "light"
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
     //backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    marginTop: -10
+    backgroundPosition: "center",
+    marginTop: -10,
   },
   paper: {
     margin: theme.spacing(6, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -67,50 +70,45 @@ export default function SignUpPage() {
   const [password, setPassword] = React.useState("");
   const [repassword, setRePassword] = React.useState("");
 
-
   function handleFullName(event) {
-    setFullName(event.target.value)
+    setFullName(event.target.value);
   }
 
   function handleDob(event) {
-    setDob(event.target.value)
+    setDob(event.target.value);
   }
 
   function handleEmail(event) {
-    setEmail(event.target.value)
+    setEmail(event.target.value);
   }
 
   function handlePassword(event) {
-    setPassword(event.target.value)
+    setPassword(event.target.value);
   }
 
   function handleRePassword(event) {
-    setRePassword(event.target.value)
+    setRePassword(event.target.value);
   }
-
 
   function handleSubmit() {
     if (password === repassword) {
-
       const userDetails = {
-        "FullName": fullname,
-        "DOB": dob,
-        "Email": email,
-        "Password": password
-      }
+        FullName: fullname,
+        DOB: dob,
+        Email: email,
+        Password: password,
+      };
 
       ServiceCall.userSignUp(userDetails).then((response) => {
         if (response.data === "False") {
-          alert("Already a registered User, Please login with same ID")
+          alert("Already a registered User, Please login with same ID");
+        } else {
+          localStorage.setItem("user_key", response.data.name);
+          window.open("#/home", "_self");
         }
-        else {
-          localStorage.setItem('user_key', response.data.name);
-          window.open("#/home", "_self")
-        }
-
-      })
+      });
     } else {
-      alert("Password did not match")
+      alert("Password did not match");
     }
   }
 
@@ -140,7 +138,7 @@ export default function SignUpPage() {
             autoFocus
             onChange={handleFullName}
           />
-          <br/>
+          <br />
           <TextField
             variant="outlined"
             color="secondary"
@@ -210,7 +208,7 @@ export default function SignUpPage() {
             <b>Sign Up</b>
           </Button>
           <Grid container>
-            <Grid item xs='12'>
+            <Grid item xs="12">
               <Link href="#/login" variant="body2">
                 <Typography variant="body2" color="secondary" align="center">
                   Already have an account? Login

@@ -1,43 +1,45 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import { Link } from 'react-router-dom';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import ServiceCall from '../../Service/ServiceCall';
-
+import React from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import { Link } from "react-router-dom";
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import ServiceCall from "../../Service/ServiceCall";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100vh',
+    height: "100vh",
   },
   image: {
-    backgroundImage: 'url(https://miro.medium.com/max/1110/1*F2-ZQDltDoXDI6MhMlH5aQ.png)',
-    backgroundRepeat: 'no-repeat',
+    backgroundImage:
+      "url(https://miro.medium.com/max/1110/1*F2-ZQDltDoXDI6MhMlH5aQ.png)",
+    backgroundRepeat: "no-repeat",
     backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    marginTop: -10
+      theme.palette.type === "light"
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    marginTop: -10,
   },
   paper: {
     margin: theme.spacing(8, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.primary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -51,43 +53,37 @@ export default function LoginPage() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-
   function handleEmail(event) {
-    setEmail(event.target.value)
+    setEmail(event.target.value);
   }
 
   function handlePassword(event) {
-    setPassword(event.target.value)
+    setPassword(event.target.value);
   }
 
   function handleSubmit() {
-
     const userLoginDetails = {
-      "Email": email,
-      "Password": password
-    }
+      Email: email,
+      Password: password,
+    };
 
     //temporary login
-    window.open("#/home", "_self")
-    
+    window.open("#/home", "_self");
+
     ServiceCall.userSignIn(userLoginDetails).then((response) => {
       if (response.data === "False") {
-        alert("User is not regitered, Please signup before")
-        window.open("#/home", "_self")
-      }
-      else {
+        alert("User is not regitered, Please signup before");
+        window.open("#/home", "_self");
+      } else {
         // console.log(response.data)
-        localStorage.setItem('user_key', response.name);
-        window.open("#/home", "_self")
+        localStorage.setItem("user_key", response.name);
+        window.open("#/home", "_self");
       }
-
-    })
-
+    });
   }
 
   return (
     <Grid container component="main" className={classes.root}>
-
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -131,9 +127,7 @@ export default function LoginPage() {
             className={classes.submit}
             onClick={handleSubmit}
           >
-
             <b>Log In</b>
-
           </Button>
 
           <Grid container>
@@ -141,11 +135,11 @@ export default function LoginPage() {
               <Link to="/signup">
                 <Typography variant="body2" color="primary" align="left">
                   Don't have an account? Sign Up
-                    </Typography>
+                </Typography>
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/login" >
+              <Link to="/login">
                 <Typography variant="body2" color="primary" align="right">
                   Forgot password?
                 </Typography>
@@ -154,8 +148,8 @@ export default function LoginPage() {
           </Grid>
           <Box mt={5}>
             <Typography variant="body1" color="textSecondary" align="center">
-              Welcome to WellEmirate
-              </Typography>
+              Welcome to DASH
+            </Typography>
           </Box>
         </div>
       </Grid>

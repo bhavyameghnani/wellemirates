@@ -115,9 +115,7 @@ export default function ShopTiles(props) {
       <CssBaseline />
       <main>
         <Typography variant="h5" className={classes.divHeading}>
-          <b>
-            Available WellEmirate Coins in your account: {props.balance} WEC 💰
-          </b>
+          <b>Available DASH Coins in your account: {props.balance} WEC 💰</b>
         </Typography>
         <br />
         <Grid container spacing={4}>
@@ -313,10 +311,7 @@ export default function ShopTiles(props) {
                 <Grid item xs={6}>
                   <center>
                     <Typography variant="h5" className={classes.divHeading}>
-                      <b>
-                        {" "}
-                        Available WellEmirate Coins: {props.balance} WEC 💰
-                      </b>
+                      <b> Available DASH Coins: {props.balance} WEC 💰</b>
                     </Typography>
                   </center>
                 </Grid>
@@ -333,7 +328,7 @@ export default function ShopTiles(props) {
                         setOpen(false);
                       }}
                     >
-                      Buy Now using WellEmirate Coins
+                      Buy Now using DASH Coins
                     </Button>
                   </center>
                 </Grid>

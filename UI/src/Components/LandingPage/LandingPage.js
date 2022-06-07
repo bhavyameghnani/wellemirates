@@ -92,9 +92,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const mainFeaturedPost = {
-  title: "WellEmirate - Digital Ally for Responsible Citizen",
+  title: "DASH - Digital Ally for Responsible Citizen",
   description:
-    "Inspired by IKIGAI concept, WellEmirate makes citizens to be their best version in three main aspects - Health Mentall Wellness, Community Connect & Sustaining Mother Earth.",
+    "Inspired by IKIGAI concept, DASH makes citizens to be their best version in three main aspects - Health Mentall Wellness, Community Connect & Sustaining Mother Earth.",
   image: dashboardImage,
   imgText: "main image description",
   linkText: "Continue reading…",
@@ -155,7 +155,7 @@ export default function Home() {
 
       <header className="App-header">
         <Container maxWidth="lg">
-          <Header title="WellEmirate" />
+          <Header title="DASH" />
 
           <main>
             <MainFeaturedPost post={mainFeaturedPost} />
@@ -166,7 +166,7 @@ export default function Home() {
                 align="center"
                 className={classes.divHeading}
               >
-                <b>👋 Meet Aisha from WellEmirate 👋 </b>
+                <b>👋 Meet Aisha from DASH 👋 </b>
               </Typography>
               <br />
               <br />
@@ -224,8 +224,7 @@ export default function Home() {
             <Grid item xs={12}>
               <Typography variant="h4" className={classes.divHeading2}>
                 <b>
-                  (SDGs)Sustainable Development Goals that WellEmirate Aims to
-                  Achieve
+                  (SDGs)Sustainable Development Goals that DASH Aims to Achieve
                 </b>
               </Typography>
               <img src={sdg3} height="400px" width="600px" />

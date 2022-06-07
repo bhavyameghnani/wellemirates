@@ -11,7 +11,7 @@ export default function Shop(props) {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="WellEmirate Market Place" />
+        <Header title="DASH Market Place" />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={2} align="center">

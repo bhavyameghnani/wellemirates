@@ -25,7 +25,7 @@ export default function Wall() {
 }
 
 const mainFeaturedPost = {
-  title: "WellEmirate Activity Wall",
+  title: "DASH Activity Wall",
   description:
     "Activity Wall to know what your friends, colleague and various platform users are upto",
   image: "https://miro.medium.com/max/480/1*JPgnhoJBXyprgbmRQdihYA.gif",

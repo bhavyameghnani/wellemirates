@@ -272,7 +272,7 @@ export default function CommunityConnect(props) {
                   <Grid item xs={6}>
                     <center>
                       <Typography variant="h5" className={classes.divHeading}>
-                        <b> Available / Earned WellEmirate Coins: 30 WEC 💰</b>
+                        <b> Available / Earned DASH Coins: 30 WEC 💰</b>
                       </Typography>
                     </center>
                   </Grid>
