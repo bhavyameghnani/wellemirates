@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
 const mainFeaturedPost = {
   title: "DASH - Digital Ally for Responsible Citizen",
   description:
-    "Inspired by IKIGAI concept, DASH makes citizens to be their best version in three main aspects - Health Mentall Wellness, Community Connect & Sustaining Mother Earth.",
+    "Inspired by IKIGAI concept, WellEmirate makes citizens to be their best version in three main aspects - Health Mentall Wellness, Community Connect & Active Collaboration Learning.",
   image: dashboardImage,
   imgText: "main image description",
   linkText: "Continue reading…",

@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Designing a sustainable future using ICTs  - Well Emirates - Blockchain for a better life
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* WellEmirate empowers citizens’ mindset and helps them to be their best version by providing opportunities over the platform in three main areas - health & mental wellness, community connect & collaborative learning.
+* It has an AI-powered conversational digital ally named “**Aisha**” that understands platform users’ behaviors, traits and promotes them with tips & engaging notifications for better well-being.
+* The entire solution is powered by Blockchain technology and it incentives its users with WellEmirate Coins (WEC) which further helps users to shop eco-friendly products or get discounts and coupons for their favorite brands. 
+* This incentivizing module helps our platform users to stay motivated and take more challenges that WellEmirate has to provide.
 
-## Available Scripts
+# Deployed solution: https://wellemirate.web.app/#/
 
-In the project directory, you can run:
+# Steps to run the application locally:
+## Frontend - React
 
-### `npm start`
+$ cd UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+$ npm install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+$ npm start --will start frontend server @localhost:3000
 
-### `npm test`
+## Backend - Flask
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+$ cd backend
 
-### `npm run build`
+$ python -m venv venv
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+$ source ./venv/bin/activate #activate virtual env
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+(venv)$ pip install -r requirements.txt
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+(venv)$ python App.py --will start backend server #localhost:5000
 
-### `npm run eject`
+# Application Snaps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## HomePage:
+![image](https://user-images.githubusercontent.com/30114183/143368600-71fb01bc-cd5d-4352-912e-12fc9c97cada.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Health Statistics:
+![image](https://user-images.githubusercontent.com/30114183/143368747-446491bc-5815-4a21-8054-2254524ffaa8.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Mental Health Exercises:
+![image](https://user-images.githubusercontent.com/30114183/143368868-eb5c04cb-e7e4-4949-aa26-ea36e3a0a20b.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Marketplace:
+![image](https://user-images.githubusercontent.com/30114183/143368971-b896786b-a41e-4370-a0a3-7ef06203c13a.png)
 
-## Learn More
+## Transactions through Blockchain:
+![image](https://user-images.githubusercontent.com/30114183/143370245-4c3c2be3-e36d-4e68-9240-3bbfaa95abae.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image](https://user-images.githubusercontent.com/30114183/143369149-a7f9b456-1923-45ec-807c-f148f1219ec7.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Community Connect:
+![image](https://user-images.githubusercontent.com/30114183/143370375-d8ccc4b7-fe27-4f4a-9ad5-7b454161cb57.png)
 
-### Code Splitting
+## Activity Wall:
+![image](https://user-images.githubusercontent.com/30114183/143370436-022727f8-1d62-44d1-a3bc-630e0195ba66.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## My Profile:
+![image](https://user-images.githubusercontent.com/30114183/143370339-b05821fb-bc12-46e2-994c-67824a74c063.png)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
